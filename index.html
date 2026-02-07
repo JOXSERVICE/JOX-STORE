@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جوكس لخدمات السوشيال ميديا | JOX VIP STORE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        :root { --primary: #6366f1; --secondary: #a855f7; --dark: #020617; --voda: #e60000; --gold: #fbbf24; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--dark);
+            background-image: radial-gradient(circle at 10% 20%, rgba(230, 0, 0, 0.05) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+            color: white;
+            overflow-x: hidden;
+        }
+        .glass { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .voda-gradient { background: linear-gradient(135deg, #e60000 0%, #990000 100%); }
+        .service-card { transition: all 0.4s ease; border-radius: 28px; border: 1px solid rgba(255,255,255,0.03); overflow: hidden; }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--secondary); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .insta-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .strike { text-decoration: line-through; color: #64748b; font-size: 0.8em; }
+        select option { background: #0f172a; color: white; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+            <span class="text-3xl font-black italic tracking-tighter text-white">JOX<span class="text-red-600">.</span></span>
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/jox_800" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="https://wa.me/201061854695" target="_blank" class="bg-red-600 text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-widest transition hover:scale-105">اتصل بجوكس</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-44 pb-20 text-center px-6">
+        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">جوكس لخدمات <br> <span class="text-red-600">السوشيال ميديا</span></h1>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-10 font-bold italic">التوثيق، الشحن، والزيادات.. كله في مكان واحد وبأمان تام.</p>
+        <a href="https://www.instagram.com/jox_800" target="_blank" class="insta-btn inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-black shadow-2xl hover:scale-105 transition-transform">
+            <i class="fa-brands fa-instagram text-2xl"></i> تابع حساب صاحب الموقع
+        </a>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="service-card glass border-white/10 lg:col-span-2">
+            <div class="voda-gradient h-full w-full p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-right">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Vodafone_Logo.svg" class="w-full" alt="voda">
+                        </div>
+                        <span class="text-white font-black text-2xl">فودافون مصر</span>
+                    </div>
+                    <h3 class="text-4xl font-black text-white mb-4 italic">شحن باقات فوري</h3>
+                    <p class="text-red-100 font-bold mb-8">اشحن باقة فليكس أو إنترنت أو مكالمات في ثواني بضغطة واحدة.</p>
+                    <button onclick="openOrderModal('شحن باقة فودافون', 'vodafone')" class="bg-white text-red-600 px-12 py-4 rounded-2xl font-black text-xl shadow-2xl hover:bg-gray-100 transition">اختار باقتك دلوقتي</button>
+                </div>
+                <i class="fa-solid fa-bolt-lightning text-[120px] text-white/20 animate-pulse"></i>
+            </div>
+        </div>
+
+        <div class="service-card glass p-8 border-sky-500/20">
+            <div class="w-14 h-14 bg-[#0088cc] rounded-2xl flex items-center justify-center mb-6 text-white text-2xl shadow-xl"><i class="fa-brands fa-telegram"></i></div>
+            <h3 class="text-2xl font-black mb-2">تليجرام بريميوم</h3>
+            <p class="text-gray-500 text-sm mb-6 leading-relaxed italic text-sky-200/50">تفعيل الاشتراك الرسمي على رقمك الشخصي لفتح كل المميزات.</p>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="text-sky-400 font-black text-xl italic tracking-tighter underline">Premium VIP</span>
+                <button onclick="openOrderModal('تليجرام بريميوم', 'normal')" class="bg-sky-500 text-white px-6 py-2 rounded-xl font-black hover:bg-sky-600 transition shadow-lg">اشتراك</button>
+            </div>
+        </div>
+
+        <div class="service-card glass p-8">
+            <div class="w-14 h-14 insta-btn rounded-2xl flex items-center justify-center mb-6 text-white text-2xl shadow-xl"><i class="fa-brands fa-instagram"></i></div>
+            <h3 class="text-2xl font-black mb-2 italic">توثيق إنستجرام</h3>
+            <p class="text-gray-500 text-sm mb-6">يتطلب تسجيل الدخول (إيميل + باسورد).</p>
+            <div class="flex items-center justify-between mt-auto">
+                <div class="flex flex-col">
+                    <span class="strike">250 EGP</span>
+                    <span class="text-2xl font-black text-pink-500">170 EGP</span>
+                </div>
+                <button onclick="openOrderModal('توثيق إنستجرام', 'auth')" class="bg-white text-black px-6 py-2 rounded-xl font-black hover:bg-pink-500 hover:text-white transition">طلب</button>
+            </div>
+        </div>
+
+        <div class="service-card glass p-8">
+            <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl shadow-xl"><i class="fa-brands fa-facebook-f"></i></div>
+            <h3 class="text-2xl font-black mb-2 italic">توثيق فيسبوك</h3>
+            <p class="text-gray-500 text-sm mb-6">يتطلب تسجيل الدخول (إيميل + باسورد).</p>
+            <div class="flex items-center justify-between mt-auto">
+                <div class="flex flex-col">
+                    <span class="strike">250 EGP</span>
+                    <span class="text-2xl font-black text-blue-500">170 EGP</span>
+                </div>
+                <button onclick="openOrderModal('توثيق فيسبوك', 'auth')" class="bg-white text-black px-6 py-2 rounded-xl font-black hover:bg-blue-600 hover:text-white transition">طلب</button>
+            </div>
+        </div>
+
+        <div class="service-card glass p-8 border-purple-500/20">
+            <div class="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl shadow-xl"><i class="fa-solid fa-arrow-trend-up"></i></div>
+            <h3 class="text-2xl font-black mb-2 italic">تزويد السوشيال ميديا</h3>
+            <p class="text-gray-500 text-sm mb-6 italic">السرعة الفائقة في تنفيذ الطلبات.</p>
+            <div class="space-y-2 mb-6 text-xs font-bold text-gray-400">
+                <div class="flex justify-between border-b border-white/5 pb-2"><span>1000 مشاهدة تيك توك</span><span class="text-green-500">2 EGP</span></div>
+                <div class="flex justify-between border-b border-white/5 pb-2"><span>1000 متابع إنستجرام</span><span class="text-green-500">50 EGP</span></div>
+            </div>
+            <button onclick="openOrderModal('تزويد متابعين/مشاهدات', 'growth')" class="w-full bg-purple-600 text-white py-4 rounded-xl font-black hover:bg-purple-700 transition shadow-xl shadow-purple-900/20">اختار واطلب</button>
+        </div>
+
+        <div class="service-card glass p-8 border-orange-500/20">
+            <div class="w-14 h-14 bg-orange-600 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl shadow-xl"><i class="fa-solid fa-gamepad"></i></div>
+            <h3 class="text-2xl font-black mb-2 italic text-orange-400">شحن فري فاير</h3>
+            <p class="text-gray-500 text-sm mb-6 italic">شحن بالآيدي (ID) في ثواني.</p>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="text-white font-black text-xs uppercase tracking-widest">Garena Official</span>
+                <button onclick="openOrderModal('شحن فري فاير', 'normal')" class="bg-orange-600 text-white px-6 py-2 rounded-xl font-black hover:bg-orange-700 transition shadow-lg">شحن</button>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="orderModal" class="fixed inset-0 bg-black/95 hidden items-center justify-center z-[100] backdrop-blur-2xl p-4">
+        <div class="glass max-w-md w-full rounded-[40px] p-8 relative border-white/10 shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 left-6 text-gray-500 hover:text-white transition"><i class="fa-solid fa-circle-xmark text-3xl"></i></button>
+            
+            <div class="text-center mb-8">
+                <h2 id="serviceTitle" class="text-3xl font-black text-white italic">تأكيد طلبك</h2>
+                <div class="w-16 h-1 bg-red-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <div class="space-y-5">
+                <div id="vodaOptions" class="hidden space-y-2">
+                    <label class="text-[10px] font-black text-gray-500 mr-2 uppercase tracking-widest">اختار باقة فودافون</label>
+                    <select id="vodaSelect" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white outline-none focus:border-red-600 appearance-none">
+                        <option value="تجديد الباقة الحالية">تجديد الباقة الحالية</option>
+                        <option value="باقة فليكس 30">باقة فليكس 30</option>
+                        <option value="باقة فليكس 45">باقة فليكس 45</option>
+                        <option value="باقة فليكس 70">باقة فليكس 70</option>
+                        <option value="باقة إنترنت 2000 ميجا">باقة إنترنت 2000 ميجا</option>
+                        <option value="باقة إنترنت 5000 ميجا">باقة إنترنت 5000 ميجا</option>
+                        <option value="باقة أخرى (مخصصة)">باقة أخرى (مخصصة)</option>
+                    </select>
+                </div>
+
+                <div id="growthOptions" class="hidden space-y-2">
+                    <label class="text-[10px] font-black text-gray-500 mr-2 uppercase tracking-widest">اختار نوع التزويد</label>
+                    <select id="growthSelect" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white outline-none focus:border-purple-600 appearance-none">
+                        <option value="1000 مشاهدة تيك توك (2 EGP)">1000 مشاهدة تيك توك (2 EGP)</option>
+                        <option value="1000 متابع إنستجرام (50 EGP)">1000 متابع إنستجرام (50 EGP)</option>
+                        <option value="باقة تزويد مخصصة">باقة تزويد مخصصة (أخرى)</option>
+                    </select>
+                </div>
+
+                <div id="authFields" class="hidden space-y-4">
+                    <input type="text" id="emailInput" placeholder="الإيميل أو الرقم" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white outline-none focus:border-pink-500">
+                    <input type="password" id="passInput" placeholder="كلمة السر" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white outline-none focus:border-pink-500">
+                </div>
+
+                <div id="normalFields" class="space-y-1">
+                    <input type="text" id="detailInput" placeholder="البيانات (رقم الموبايل / ID / الرابط)" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white outline-none focus:border-red-600 transition-all shadow-inner">
+                </div>
+
+                <div class="p-5 bg-red-900/20 rounded-3xl border border-red-500/10 text-center">
+                    <p class="text-red-500 text-[10px] font-black mb-1 uppercase tracking-widest">فودافون كاش الرسمية</p>
+                    <p class="text-2xl font-mono text-white tracking-widest font-black italic">01061854695</p>
+                </div>
+
+                <button onclick="submitOrder()" class="w-full bg-white text-black font-black py-5 rounded-2xl shadow-xl hover:bg-red-600 hover:text-white transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3">
+                    إرسال الطلب لجوكس <i class="fa-brands fa-whatsapp text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-20 text-center border-t border-white/5">
+        <h2 class="text-2xl font-black mb-10 italic">JOX<span class="text-red-600">.</span> SOCIAL MEDIA</h2>
+        <div class="flex justify-center gap-6 mb-12">
+            <a href="https://www.instagram.com/jox_800" target="_blank" class="w-14 h-14 glass rounded-2xl flex items-center justify-center text-2xl text-gray-500 hover:text-white hover:insta-btn transition-all"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/201061854695" target="_blank" class="w-14 h-14 glass rounded-2xl flex items-center justify-center text-2xl text-gray-500 hover:text-white hover:bg-green-600 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p class="text-gray-600 font-bold tracking-widest uppercase text-xs">JOX VIP SERVICES © 2026</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('orderModal');
+        const authFields = document.getElementById('authFields');
+        const normalFields = document.getElementById('normalFields');
+        const growthOptions = document.getElementById('growthOptions');
+        const vodaOptions = document.getElementById('vodaOptions');
+        const serviceTitle = document.getElementById('serviceTitle');
+        const detailInput = document.getElementById('detailInput');
+        
+        let currentType = '';
+        let currentService = '';
+
+        function openOrderModal(name, type) {
+            currentService = name;
+            currentType = type;
+            serviceTitle.innerText = name;
+            
+            // Hide all special fields first
+            authFields.classList.add('hidden');
+            growthOptions.classList.add('hidden');
+            vodaOptions.classList.add('hidden');
+            normalFields.classList.remove('hidden');
+
+            // Reset inputs
+            document.getElementById('emailInput').value = '';
+            document.getElementById('passInput').value = '';
+            detailInput.value = '';
+
+            if(type === 'auth') {
+                authFields.classList.remove('hidden');
+                normalFields.classList.add('hidden');
+            } else if(type === 'growth') {
+                growthOptions.classList.remove('hidden');
+                detailInput.placeholder = "أدخل رابط الحساب أو الفيديو";
+            } else if(type === 'vodafone') {
+                vodaOptions.classList.remove('hidden');
+                detailInput.placeholder = "أدخل رقم الهاتف المراد شحنه";
+            } else {
+                detailInput.placeholder = "البيانات (ID / رقم / رابط)";
+            }
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitOrder() {
+            let message = `*طلب جديد من متجر جوكس (JOX)*%0A`;
+            message += `*الخدمة:* ${currentService}%0A`;
+
+            if(currentType === 'vodafone') {
+                const packageSel = document.getElementById('vodaSelect').value;
+                message += `*الباقة المختارة:* ${packageSel}%0A`;
+            } else if(currentType === 'growth') {
+                const growthSel = document.getElementById('growthSelect').value;
+                message += `*نوع التزويد:* ${growthSel}%0A`;
+            }
+
+            if(currentType === 'auth') {
+                const email = document.getElementById('emailInput').value;
+                const pass = document.getElementById('passInput').value;
+                if(!email || !pass) {
+                    Swal.fire({ icon: 'error', title: 'بيانات ناقصة', text: 'يرجى إدخال الإيميل والباسورد', background: '#020617', color: '#fff' });
+                    return;
+                }
+                message += `*الإيميل:* ${email}%0A*السر:* ${pass}%0A*السعر:* 170 EGP%0A`;
+            } else {
+                const detail = detailInput.value;
+                if(!detail) {
+                    Swal.fire({ icon: 'error', title: 'بيانات ناقصة', text: 'يرجى كتابة البيانات المطلوبة', background: '#020617', color: '#fff' });
+                    return;
+                }
+                message += `*البيانات:* ${detail}%0A`;
+            }
+
+            message += `%0A_تم الإرسال عبر الموقع الرسمي لجوكس_`;
+            window.open(`https://wa.me/201061854695?text=${message}`, '_blank');
+            closeModal();
+        }
+
+        window.onclick = function(e) { if(e.target == modal) closeModal(); }
+    </script>
+</body>
+</html>
